@@ -50,6 +50,7 @@ class Run(HasChildren):
     is_strikethrough = cobble.field()
     is_all_caps = cobble.field()
     is_small_caps = cobble.field()
+    is_highlight = cobble.field()
     vertical_alignment = cobble.field()
     font = cobble.field()
     font_size = cobble.field()
@@ -125,6 +126,7 @@ def run(
     is_strikethrough=None,
     is_all_caps=None,
     is_small_caps=None,
+    is_highlight=None,
     vertical_alignment=None,
     font=None,
     font_size=None,
@@ -141,6 +143,7 @@ def run(
         is_strikethrough=bool(is_strikethrough),
         is_all_caps=bool(is_all_caps),
         is_small_caps=bool(is_small_caps),
+        is_highlight=bool(is_highlight),
         vertical_alignment=vertical_alignment,
         font=font,
         font_size=font_size,

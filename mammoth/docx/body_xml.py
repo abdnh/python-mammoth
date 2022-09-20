@@ -94,6 +94,7 @@ def _create_reader(numbering, content_types, relationships, styles, docx_file, f
         is_strikethrough = read_boolean_element(properties.find_child("w:strike"))
         is_all_caps = read_boolean_element(properties.find_child("w:caps"))
         is_small_caps = read_boolean_element(properties.find_child("w:smallCaps"))
+        is_highlight = read_boolean_element(properties.find_child("w:highlight"))
 
         def add_complex_field_hyperlink(children):
             hyperlink_kwargs = current_hyperlink_kwargs()
@@ -115,6 +116,7 @@ def _create_reader(numbering, content_types, relationships, styles, docx_file, f
                 is_strikethrough=is_strikethrough,
                 is_all_caps=is_all_caps,
                 is_small_caps=is_small_caps,
+                is_highlight=is_highlight,
                 vertical_alignment=vertical_alignment,
                 font=font,
                 font_size=font_size,

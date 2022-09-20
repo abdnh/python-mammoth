@@ -125,6 +125,8 @@ class _DocumentConverter(documents.element_visitor(args=1)):
             paths.append(self._find_style_for_run_property("italic", default="em"))
         if run.is_bold:
             paths.append(self._find_style_for_run_property("bold", default="strong"))
+        if run.is_highlight:
+            paths.append(html_paths.element(["mark"], fresh=False))
         paths.append(self._find_html_path_for_run(run))
 
         for path in paths:
